@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품 소개 - Apple Farm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-red': '#ff1a1a',
+                        'apple-dark': '#cc0000',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- 네비게이션 바 -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-apple-red">Apple Farm</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-apple-red">홈</a>
+                    <a href="product.html" class="text-gray-700 hover:text-apple-red font-bold">제품 소개</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-apple-red">소개</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-apple-red">문의</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 제품 소개 섹션 -->
+    <section class="py-20 bg-white min-h-[60vh]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">제품 소개</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 제품 카드 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="사과 이미지.png" alt="홍옥 사과" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">홍옥 사과</h3>
+                        <p class="mt-2 text-gray-600">달콤하고 아삭한 식감의 프리미엄 홍옥 사과</p>
+                        <div class="mt-4">
+                            <span class="text-apple-red font-bold">₩15,000/kg</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 제품 카드 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="사과 이미지.png" alt="부사 사과" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">부사 사과</h3>
+                        <p class="mt-2 text-gray-600">신선하고 달콤한 부사 사과</p>
+                        <div class="mt-4">
+                            <span class="text-apple-red font-bold">₩18,000/kg</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 제품 카드 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="사과 이미지.png" alt="아오리 사과" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">아오리 사과</h3>
+                        <p class="mt-2 text-gray-600">상큼하고 아삭한 아오리 사과</p>
+                        <div class="mt-4">
+                            <span class="text-apple-red font-bold">₩12,000/kg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-0">
+                <!-- 맛있는 사과 -->
+                <div class="flex flex-col items-center md:items-start">
+                    <span class="material-icons text-3xl text-apple-red mb-2">nutrition</span>
+                    <span class="font-bold text-lg">맛있는 사과</span>
+                    <span class="text-gray-400 mt-1">자연의 달콤함을 담았습니다</span>
+                </div>
+                <!-- 연락처 -->
+                <div class="flex flex-col items-center md:items-start">
+                    <span class="material-icons text-3xl text-apple-red mb-2">call</span>
+                    <span class="font-bold text-lg">연락처</span>
+                    <a href="tel:+82-10-1234-5678" class="text-gray-400 mt-1 hover:text-white">010-1234-5678</a>
+                </div>
+                <!-- 팔로우 -->
+                <div class="flex flex-col items-center md:items-start">
+                    <span class="material-icons text-3xl text-apple-red mb-2">share</span>
+                    <span class="font-bold text-lg">팔로우</span>
+                    <div class="flex space-x-3 mt-1">
+                        <a href="#" class="hover:text-apple-red"><span class="material-icons">facebook</span></a>
+                        <a href="#" class="hover:text-apple-red"><span class="material-icons">instagram</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p>&copy; 2024 Apple Farm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

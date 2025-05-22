@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K팝 소개</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Noto Sans KR', 'Segoe UI', Arial, sans-serif; }
+      .orbitron { font-family: 'Orbitron', 'Noto Sans KR', sans-serif; }
+      @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease-out forwards;
+      }
+      .fade-in-delay-1 { animation-delay: 0.3s; }
+      .fade-in-delay-2 { animation-delay: 0.6s; }
+      .fade-in-delay-3 { animation-delay: 0.9s; }
+      .fade-in-delay-4 { animation-delay: 1.2s; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-200 via-indigo-200 to-purple-200 min-h-screen flex items-center justify-center">
+  <!-- 네비게이션 바 -->
+  <nav class="fixed top-0 left-0 w-full z-30 bg-white/60 backdrop-blur-md shadow-md border-b border-white/40">
+    <div class="max-w-4xl mx-auto flex items-center justify-between px-4 py-2">
+      <div class="flex items-center gap-2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" alt="대한민국 국기" class="w-7 h-5 rounded shadow-sm border border-white/60 bg-white/60">
+        <span class="orbitron text-xl font-extrabold text-blue-700 tracking-wide">글로벌 팝</span>
+      </div>
+      <ul class="flex gap-2 md:gap-4 text-base md:text-lg font-semibold">
+        <li><a href="index.html" class="px-3 py-1 rounded-lg hover:bg-blue-100 text-blue-700 transition">K-Pop</a></li>
+        <li><a href="us-pop.html" class="px-3 py-1 rounded-lg hover:bg-pink-100 text-pink-600 transition">US Pop</a></li>
+        <li><a href="uk-pop.html" class="px-3 py-1 rounded-lg hover:bg-indigo-100 text-indigo-700 transition">UK Pop</a></li>
+        <li><a href="j-pop.html" class="px-3 py-1 rounded-lg hover:bg-yellow-100 text-yellow-700 transition">J-Pop</a></li>
+        <li><a href="latin-pop.html" class="px-3 py-1 rounded-lg hover:bg-red-100 text-red-600 transition">Latin Pop</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="pt-20 w-full max-w-xl mx-auto relative overflow-hidden">
+    <div class="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 opacity-30 rounded-full blur-2xl"></div>
+    <div class="backdrop-blur-xl bg-white/30 border border-white/40 shadow-2xl rounded-3xl p-8 md:p-12 relative">
+      <div class="flex justify-center mb-6 fade-in fade-in-delay-1">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" alt="대한민국 국기" class="w-16 h-12 md:w-20 md:h-14 object-contain rounded shadow-md border border-white/60 bg-white/60 backdrop-blur-sm">
+      </div>
+      <h1 class="orbitron text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 text-center drop-shadow-lg mb-6 fade-in fade-in-delay-2">K팝(K-Pop) 소개</h1>
+      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="K팝 이미지" class="rounded-xl shadow-lg mb-8 border-4 border-blue-200 fade-in fade-in-delay-3">
+      <p class="text-lg md:text-xl text-gray-700 text-center leading-relaxed mb-8 fade-in fade-in-delay-4">
+        <span class="font-bold text-blue-600">K팝(Korean Pop)</span>은 대한민국에서 시작된 대중음악 장르로, 전 세계적으로 큰 인기를 끌고 있습니다.<br>
+        화려한 퍼포먼스, 중독성 있는 멜로디, 세련된 패션과 댄스가 특징입니다.<br>
+        대표적인 K팝 그룹으로는 <span class="font-bold text-purple-600">BTS(방탄소년단)</span>, <span class="font-bold text-pink-500">BLACKPINK</span>, <span class="font-bold text-blue-500">TWICE</span>, <span class="font-bold text-indigo-500">EXO</span> 등이 있습니다.<br>
+        K팝은 음악뿐만 아니라 문화, 패션, 뷰티 등 다양한 분야에 영향을 미치며 글로벌 트렌드로 자리잡았습니다.
+      </p>
+      <!-- K팝 위키백과 기반 상세 정보 -->
+      <section class="bg-white/50 rounded-2xl shadow p-6 mb-8 fade-in fade-in-delay-4">
+        <h2 class="text-xl md:text-2xl font-bold text-blue-800 mb-4">K팝의 역사</h2>
+        <ul class="list-disc pl-6 text-gray-800 mb-4">
+          <li><span class="font-semibold">1990년대</span> : 서태지와 아이들, H.O.T. 등 1세대 아이돌 그룹의 등장으로 K팝의 기초가 마련됨</li>
+          <li><span class="font-semibold">2000~2010년대</span> : 보아, 동방신기, 소녀시대, 빅뱅 등 글로벌 진출과 한류 열풍 본격화</li>
+          <li><span class="font-semibold">2020년대</span> : BTS, BLACKPINK 등 세계적 슈퍼스타의 등장과 음악적 다양성 확대</li>
+        </ul>
+        <h2 class="text-xl md:text-2xl font-bold text-blue-800 mb-4">K팝의 특징</h2>
+        <ul class="list-disc pl-6 text-gray-800 mb-4">
+          <li>화려한 군무(그룹 댄스)와 퍼포먼스</li>
+          <li>트렌디한 패션과 뮤직비디오</li>
+          <li>팬덤 문화와 글로벌 소통</li>
+          <li>힙합, R&B, 일렉트로닉, 트로트 등 다양한 장르의 융합</li>
+          <li>디지털 앨범, SNS, 유튜브 등 디지털 플랫폼을 통한 확산</li>
+        </ul>
+        <h2 class="text-xl md:text-2xl font-bold text-blue-800 mb-4">K팝의 문화적 영향</h2>
+        <ul class="list-disc pl-6 text-gray-800">
+          <li>음악뿐 아니라 패션, 뷰티, 예능, 드라마 등 한류 전반에 영향</li>
+          <li>전 세계 다양한 국가에서 K팝 팬덤과 커뮤니티 형성</li>
+          <li>글로벌 차트(빌보드 등) 및 시상식에서 두각</li>
+        </ul>
+        <div class="text-right mt-4">
+          <a href="https://ko.wikipedia.org/wiki/K-pop" target="_blank" class="text-blue-700 underline">[K팝 위키백과 더보기]</a>
+        </div>
+      </section>
+      <div class="flex flex-wrap gap-3 justify-center fade-in fade-in-delay-4">
+        <a href="#" class="px-5 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold shadow-md hover:scale-105 transition-transform">BTS</a>
+        <a href="#" class="px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-400 text-white font-bold shadow-md hover:scale-105 transition-transform">BLACKPINK</a>
+        <a href="#" class="px-5 py-2 rounded-full bg-gradient-to-r from-blue-400 to-indigo-400 text-white font-bold shadow-md hover:scale-105 transition-transform">TWICE</a>
+        <a href="#" class="px-5 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-blue-700 text-white font-bold shadow-md hover:scale-105 transition-transform">EXO</a>
+      </div>
+      <!-- 최신 K팝 뉴스 섹션 -->
+      <div class="mt-12 fade-in fade-in-delay-4">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4 text-center">최신 K팝 뉴스</h2>
+        <ul class="space-y-3 text-base md:text-lg text-gray-800">
+          <li class="bg-white/60 rounded-xl px-4 py-3 shadow-sm border-l-4 border-blue-400">
+            <span class="font-semibold text-purple-700">방탄소년단 진</span>의 신곡 'Echo'가 미국 빌보드에서 가장 좋아하는 신곡 1위에 올랐으며, 전 세계와 유럽 아이튠즈에서 5일 연속 1위를 기록했습니다. <a href="https://www.starnewskorea.com/newsList.html?pDepth1=music&pDepth2=music" target="_blank" class="text-blue-600 underline">[출처]</a>
+          </li>
+          <li class="bg-white/60 rounded-xl px-4 py-3 shadow-sm border-l-4 border-pink-400">
+            <span class="font-semibold text-pink-600">MEOVV(미야오)</span>가 첫 EP 'MY EYES OPEN VVIDE'의 더블 타이틀 'HANDS UP'을 선공개하며 활발한 컴백 활동을 이어가고 있습니다. <a href="https://www.starnewskorea.com/newsList.html?pDepth1=music&pDepth2=music" target="_blank" class="text-blue-600 underline">[출처]</a>
+          </li>
+          <li class="bg-white/60 rounded-xl px-4 py-3 shadow-sm border-l-4 border-indigo-400">
+            <span class="font-semibold text-indigo-600">BTS 진</span>의 'Echo' 발매를 기념해 뉴욕 엠파이어 스테이트 빌딩이 보라색 조명으로 물들었습니다. <a href="https://www.starnewskorea.com/newsList.html?pDepth1=music&pDepth2=music" target="_blank" class="text-blue-600 underline">[출처]</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

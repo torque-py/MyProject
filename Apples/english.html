@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Apples - Taste of Nature</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        ibm: ['IBM Plex Sans KR', 'sans-serif'],
+                    },
+                    colors: {
+                        'apple-red': '#ff1a1a',
+                        'apple-dark': '#cc0000',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-ibm">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-apple-red">Apple Farm</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#products" class="text-gray-700 hover:text-apple-red">Products</a>
+                    <a href="product.html" class="text-gray-700 hover:text-apple-red">Product Intro</a>
+                    <a href="#about" class="text-gray-700 hover:text-apple-red">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-apple-red">Contact</a>
+                    <a href="index.html" class="text-gray-700 hover:text-apple-red">Korean</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative bg-gradient-to-r from-apple-red to-apple-dark font-ibm">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <!-- Left Text Area -->
+                <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                    <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                        Premium Apples<br>with the Sweetness of Nature
+                    </h1>
+                    <p class="mt-4 text-xl text-white">
+                        Experience the finest quality and freshness<br>from our apple farm
+                    </p>
+                    <div class="mt-6">
+                        <a href="#products" class="inline-block bg-white text-apple-red px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                            View Products
+                        </a>
+                    </div>
+                </div>
+                <!-- Right Image Area -->
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="사과 이미지.png" 
+                         alt="Premium Apple" 
+                         class="w-[450px] h-[300px] object-cover rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="사과 이미지.png" alt="Hongok Apple" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Hongok Apple</h3>
+                        <p class="mt-2 text-gray-600">Premium Hongok apple with sweet and crisp texture</p>
+                        <div class="mt-4">
+                            <span class="text-apple-red font-bold">₩15,000/kg</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="사과 이미지.png" alt="Busa Apple" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Busa Apple</h3>
+                        <p class="mt-2 text-gray-600">Fresh and sweet Busa apple</p>
+                        <div class="mt-4">
+                            <span class="text-apple-red font-bold">₩18,000/kg</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="사과 이미지.png" alt="Aori Apple" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Aori Apple</h3>
+                        <p class="mt-2 text-gray-600">Refreshing and crisp Aori apple</p>
+                        <div class="mt-4">
+                            <span class="text-apple-red font-bold">₩12,000/kg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">Contact Us</h2>
+                <p class="mt-4 text-lg text-gray-600">If you have any questions about our products, feel free to contact us anytime</p>
+                <div class="mt-8">
+                    <a href="tel:+82-10-1234-5678" class="inline-block bg-apple-red text-white px-8 py-3 rounded-lg font-semibold hover:bg-apple-dark transition duration-300">
+                        010-1234-5678
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-0">
+                <!-- Delicious Apples -->
+                <div class="flex flex-col items-center md:items-start">
+                    <span class="material-icons text-3xl text-apple-red mb-2">nutrition</span>
+                    <span class="font-bold text-lg">Delicious Apples</span>
+                    <span class="text-gray-400 mt-1">Filled with the sweetness of nature</span>
+                </div>
+                <!-- Contact -->
+                <div class="flex flex-col items-center md:items-start">
+                    <span class="material-icons text-3xl text-apple-red mb-2">call</span>
+                    <span class="font-bold text-lg">Contact</span>
+                    <a href="tel:+82-10-1234-5678" class="text-gray-400 mt-1 hover:text-white">010-1234-5678</a>
+                </div>
+                <!-- Follow -->
+                <div class="flex flex-col items-center md:items-start">
+                    <span class="material-icons text-3xl text-apple-red mb-2">share</span>
+                    <span class="font-bold text-lg">Follow</span>
+                    <div class="flex space-x-3 mt-1">
+                        <a href="#" class="hover:text-apple-red"><span class="material-icons">facebook</span></a>
+                        <a href="#" class="hover:text-apple-red"><span class="material-icons">instagram</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p>&copy; 2024 Apple Farm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프리미엄 사과 - 자연의 달콤함</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- IBM Plex Sans KR 폰트 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        ibm: ['IBM Plex Sans KR', 'sans-serif'],
+                    },
+                    colors: {
+                        'apple-red': '#ff1a1a',
+                        'apple-dark': '#cc0000',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- 구글 Material Icons CDN 추가 -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-ibm">
+    <!-- 네비게이션 바 -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-apple-red">Apple Farm</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#products" class="text-gray-700 hover:text-apple-red">제품</a>
+                    <a href="product.html" class="text-gray-700 hover:text-apple-red">제품 소개</a>
+                    <a href="#about" class="text-gray-700 hover:text-apple-red">소개</a>
+                    <a href="#contact" class="text-gray-700 hover:text-apple-red">문의</a>
+                    <a href="english.html" class="text-gray-700 hover:text-apple-red">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <div class="relative bg-gradient-to-r from-apple-red to-apple-dark font-ibm">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <!-- 왼쪽 텍스트 영역 -->
+                <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                    <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                        자연의 달콤함을 담은<br>프리미엄 사과
+                    </h1>
+                    <p class="mt-4 text-xl text-white">
+                        최상의 품질과 신선함을 자랑하는<br>우리 농장의 사과를 만나보세요
+                    </p>
+                    <div class="mt-6">
+                        <a href="#products" class="inline-block bg-white text-apple-red px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                            제품 보기
+                        </a>
+                    </div>
+                </div>
+                <!-- 오른쪽 이미지 영역 -->
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="사과 이미지.png" 
+                         alt="프리미엄 사과" 
+                         class="w-[450px] h-[300px] object-cover rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 제품 섹션 -->
+    <section id="products" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">우리의 제품</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 제품 카드 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="홍옥 사과" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">홍옥 사과</h3>
+                        <p class="mt-2 text-gray-600">달콤하고 아삭한 식감의 프리미엄 홍옥 사과</p>
+                        <div class="mt-4">
+                            <span class="text-apple-red font-bold">₩15,000/kg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 제품 카드 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="부사 사과" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">부사 사과</h3>
+                        <p class="mt-2 text-gray-600">신선하고 달콤한 부사 사과</p>
+                        <div class="mt-4">
+                            <span class="text-apple-red font-bold">₩18,000/kg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 제품 카드 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="아오리 사과" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">아오리 사과</h3>
+                        <p class="mt-2 text-gray-600">상큼하고 아삭한 아오리 사과</p>
+                        <div class="mt-4">
+                            <span class="text-apple-red font-bold">₩12,000/kg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 문의하기 섹션 -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">문의하기</h2>
+                <p class="mt-4 text-lg text-gray-600">제품에 대한 문의사항이 있으시다면 언제든지 연락주세요</p>
+                <div class="mt-8">
+                    <a href="tel:+82-10-1234-5678" class="inline-block bg-apple-red text-white px-8 py-3 rounded-lg font-semibold hover:bg-apple-dark transition duration-300">
+                        010-1234-5678
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-0">
+                <!-- 맛있는 사과 -->
+                <div class="flex flex-col items-center md:items-start">
+                    <span class="material-icons text-3xl text-apple-red mb-2">nutrition</span>
+                    <span class="font-bold text-lg">맛있는 사과</span>
+                    <span class="text-gray-400 mt-1">자연의 달콤함을 담았습니다</span>
+                </div>
+                <!-- 연락처 -->
+                <div class="flex flex-col items-center md:items-start">
+                    <span class="material-icons text-3xl text-apple-red mb-2">call</span>
+                    <span class="font-bold text-lg">연락처</span>
+                    <a href="tel:+82-10-1234-5678" class="text-gray-400 mt-1 hover:text-white">010-1234-5678</a>
+                </div>
+                <!-- 팔로우 -->
+                <div class="flex flex-col items-center md:items-start">
+                    <span class="material-icons text-3xl text-apple-red mb-2">share</span>
+                    <span class="font-bold text-lg">팔로우</span>
+                    <div class="flex space-x-3 mt-1">
+                        <a href="#" class="hover:text-apple-red"><span class="material-icons">facebook</span></a>
+                        <a href="#" class="hover:text-apple-red"><span class="material-icons">instagram</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p>&copy; 2024 Apple Farm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

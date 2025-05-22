@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박종우 +5살 사진첩</title>
+    <style>
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 24px;
+            justify-content: center;
+        }
+        .thumb-box {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 8px;
+            width: 500px;
+            background: #fafafa;
+            text-align: center;
+            cursor: pointer;
+            transition: box-shadow 0.2s;
+        }
+        .thumb-box:hover {
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        }
+        .thumb-box img, .thumb-box video {
+            width: 480px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 0;
+            background: #000;
+        }
+        .file-name {
+            display: none;
+        }
+        .nav-btn {
+            font-size: 24px;
+            padding: 8px 20px;
+            margin: 0 16px;
+            border: none;
+            background: #eee;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .nav-btn:active, .nav-btn:hover {
+            background: #ccc;
+        }
+        #modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            flex-direction: column;
+        }
+        #modal img, #modal video {
+            max-width: 50vw;
+            max-height: 50vh;
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+            background: #fff;
+        }
+        #modal .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 40px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        @media (max-width: 700px) {
+            .thumb-box {
+                width: 98vw;
+            }
+            .thumb-box img, .thumb-box video {
+                width: 94vw;
+                height: 54vw;
+            }
+            #modal img, #modal video {
+                max-width: 98vw;
+                max-height: 80vh;
+                border-radius: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2 id="countResult">사진/동영상 개수 확인 중...</h2>
+    <div style="text-align:center; margin-bottom:16px;">
+        <button class="nav-btn" id="prevBtn">❮</button>
+        <span id="pageInfo"></span>
+        <button class="nav-btn" id="nextBtn">❯</button>
+    </div>
+    <div id="gallery"></div>
+    <div id="modal">
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+        <div id="modalContent"></div>
+    </div>
+    <script>
+        const API_KEY = 'AIzaSyB8GWDosYYque0A6WrLc3Gf4De361CEOpw';
+        const FOLDER_ID = '1_JT5h8J58oPVSLudKPxJilgLmyG1G0l6';
+        const PAGE_SIZE = 4;
+        let mediaFiles = [];
+        let currentPage = 1;
+        let totalPages = 1;
+
+        async function countMediaInFolder() {
+            try {
+                const response = await fetch(`https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&fields=files(id,name,mimeType,webContentLink,thumbnailLink)&key=${API_KEY}`);
+                const data = await response.json();
+                if (!data.files) {
+                    document.getElementById('countResult').innerText = '미디어 정보를 불러올 수 없습니다.';
+                    return [];
+                }
+                mediaFiles = data.files.filter(file => (file.mimeType && (file.mimeType.startsWith('image/') || file.mimeType.startsWith('video/'))));
+                document.getElementById('countResult').innerText = `이 폴더에는 사진/동영상이 총 ${mediaFiles.length}개 있습니다.`;
+                totalPages = Math.ceil(mediaFiles.length / PAGE_SIZE);
+                showPage(currentPage);
+            } catch (error) {
+                document.getElementById('countResult').innerText = '오류 발생: ' + error;
+            }
+        }
+
+        function showPage(page) {
+            const gallery = document.getElementById('gallery');
+            const start = (page - 1) * PAGE_SIZE;
+            const end = start + PAGE_SIZE;
+            const pageFiles = mediaFiles.slice(start, end);
+            gallery.innerHTML = '';
+            pageFiles.forEach((file, idx) => {
+                const thumbBox = document.createElement('div');
+                thumbBox.className = 'thumb-box';
+                let mediaElem;
+                if (file.mimeType.startsWith('image/')) {
+                    mediaElem = document.createElement('img');
+                    mediaElem.src = file.thumbnailLink;
+                    mediaElem.alt = file.name;
+                } else if (file.mimeType.startsWith('video/')) {
+                    mediaElem = document.createElement('video');
+                    mediaElem.src = file.thumbnailLink || file.webContentLink || `https://drive.google.com/uc?export=view&id=${file.id}`;
+                    mediaElem.controls = false;
+                    mediaElem.muted = true;
+                    mediaElem.playsInline = true;
+                    mediaElem.autoplay = true;
+                    mediaElem.loop = true;
+                }
+                mediaElem.onclick = function(e) {
+                    e.stopPropagation();
+                    openModal(file);
+                };
+                thumbBox.appendChild(mediaElem);
+                // 사진명은 숨김
+                const fileNameDiv = document.createElement('div');
+                fileNameDiv.className = 'file-name';
+                fileNameDiv.textContent = file.name;
+                thumbBox.appendChild(fileNameDiv);
+                gallery.appendChild(thumbBox);
+            });
+            document.getElementById('pageInfo').innerText = `${page} / ${totalPages}`;
+        }
+
+        function openModal(file) {
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = '';
+            let originUrl = file.webContentLink
+                ? file.webContentLink.replace('&export=download', '&export=view')
+                : `https://drive.google.com/uc?export=view&id=${file.id}`;
+            let elem;
+            if (file.mimeType.startsWith('image/')) {
+                elem = document.createElement('img');
+                elem.src = originUrl;
+                elem.alt = file.name;
+                elem.style.maxWidth = '50vw';
+                elem.style.maxHeight = '50vh';
+                // 만약 원본이 안 뜨면 thumbnailLink로 대체
+                elem.onerror = function() {
+                    this.onerror = null;
+                    this.src = file.thumbnailLink;
+                };
+            } else if (file.mimeType.startsWith('video/')) {
+                elem = document.createElement('video');
+                elem.src = originUrl;
+                elem.controls = true;
+                elem.autoplay = true;
+                elem.muted = false;
+                elem.playsInline = true;
+                elem.style.background = '#000';
+                elem.style.maxWidth = '50vw';
+                elem.style.maxHeight = '50vh';
+                // 만약 원본이 안 뜨면 thumbnailLink로 대체(가능한 경우)
+                elem.onerror = function() {
+                    this.onerror = null;
+                    if (file.thumbnailLink) {
+                        this.src = file.thumbnailLink;
+                        this.controls = false;
+                        this.autoplay = true;
+                        this.loop = true;
+                        this.muted = true;
+                    }
+                };
+            }
+            modalContent.appendChild(elem);
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('modalContent').innerHTML = '';
+        }
+        document.getElementById('modal').onclick = function(e) {
+            if (e.target === this) closeModal();
+        };
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        document.getElementById('prevBtn').onclick = function() {
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        };
+        document.getElementById('nextBtn').onclick = function() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        };
+
+        // 모바일 스와이프 지원
+        let touchStartX = 0;
+        let touchEndX = 0;
+        document.getElementById('gallery').addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        document.getElementById('gallery').addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchEndX < touchStartX - 30 && currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+            }
+            if (touchEndX > touchStartX + 30 && currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        });
+
+        countMediaInFolder();
+    </script>
+</body>
+</html>
+

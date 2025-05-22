@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Pop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Noto Sans KR', 'Segoe UI', Arial, sans-serif; }
+      .orbitron { font-family: 'Orbitron', 'Noto Sans KR', sans-serif; }
+      @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease-out forwards;
+      }
+      .fade-in-delay-1 { animation-delay: 0.3s; }
+      .fade-in-delay-2 { animation-delay: 0.6s; }
+      .fade-in-delay-3 { animation-delay: 0.9s; }
+      .fade-in-delay-4 { animation-delay: 1.2s; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-200 via-indigo-200 to-purple-200 min-h-screen flex items-center justify-center">
+  <nav class="fixed top-0 left-0 w-full z-30 bg-white/60 backdrop-blur-md shadow-md border-b border-white/40">
+    <div class="max-w-4xl mx-auto flex items-center justify-between px-4 py-2">
+      <div class="flex items-center gap-2">
+        <img src="https://i.namu.wiki/i/kl_n5RgjE0vCuA7_WtAUac6-brY2uMF_mO3DQAI29NkyCasC68dyO7f2_uwbHWrMDe9x1sua_zhK2is49bXUXkWLKyhibEcEgd3IdbD46Se70HG309jaq6vz4S5mPsllnE-SyV7IbMaeyV6-w9GcFQ.svg" alt="UK Flag" class="w-7 h-5 rounded shadow-sm border border-white/60 bg-white/60">
+        <span class="orbitron text-xl font-extrabold text-blue-700 tracking-wide">Global Pop</span>
+      </div>
+      <ul class="flex gap-2 md:gap-4 text-base md:text-lg font-semibold">
+        <li><a href="index.html" class="px-3 py-1 rounded-lg hover:bg-blue-100 text-blue-700 transition">K-Pop</a></li>
+        <li><a href="us-pop.html" class="px-3 py-1 rounded-lg hover:bg-pink-100 text-pink-600 transition">US Pop</a></li>
+        <li><a href="uk-pop.html" class="px-3 py-1 rounded-lg hover:bg-indigo-100 text-indigo-700 transition">UK Pop</a></li>
+        <li><a href="j-pop.html" class="px-3 py-1 rounded-lg hover:bg-yellow-100 text-yellow-700 transition">J-Pop</a></li>
+        <li><a href="latin-pop.html" class="px-3 py-1 rounded-lg hover:bg-red-100 text-red-600 transition">Latin Pop</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="pt-20 w-full max-w-xl mx-auto relative overflow-hidden">
+    <div class="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 opacity-30 rounded-full blur-2xl"></div>
+    <div class="backdrop-blur-xl bg-white/30 border border-white/40 shadow-2xl rounded-3xl p-8 md:p-12 relative">
+      <div class="flex justify-center mb-6 fade-in fade-in-delay-1">
+        <img src="https://i.namu.wiki/i/kl_n5RgjE0vCuA7_WtAUac6-brY2uMF_mO3DQAI29NkyCasC68dyO7f2_uwbHWrMDe9x1sua_zhK2is49bXUXkWLKyhibEcEgd3IdbD46Se70HG309jaq6vz4S5mPsllnE-SyV7IbMaeyV6-w9GcFQ.svg" alt="UK Flag" class="w-16 h-12 md:w-20 md:h-14 object-contain rounded shadow-md border border-white/60 bg-white/60 backdrop-blur-sm">
+      </div>
+      <h1 class="orbitron text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 text-center drop-shadow-lg mb-6 fade-in fade-in-delay-2">UK Pop</h1>
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="UK Pop Image" class="rounded-xl shadow-lg mb-8 border-4 border-blue-200 fade-in fade-in-delay-3">
+      <p class="text-lg md:text-xl text-gray-700 text-center leading-relaxed mb-8 fade-in fade-in-delay-4">
+        <span class="font-bold text-blue-600">UK Pop</span> is known for its rich musical heritage and innovation, influencing global pop culture for decades.<br>
+        Legendary bands and artists such as <span class="font-bold text-purple-600">The Beatles</span>, <span class="font-bold text-pink-500">Queen</span>, <span class="font-bold text-blue-500">Adele</span>, and <span class="font-bold text-indigo-500">Dua Lipa</span> have shaped the sound of modern pop.<br>
+        UK Pop continues to inspire with its creativity, diversity, and global impact.
+      </p>
+    </div>
+  </div>
+</body>
+</html> 
